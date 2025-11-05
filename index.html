@@ -77,6 +77,8 @@
             background-clip: text;
             margin-bottom: 10px;
             text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .tagline {
@@ -112,6 +114,7 @@
             margin: 30px 0;
             border: 1px solid rgba(255, 255, 255, 0.1);
             animation: fadeInUp 1s ease;
+            overflow: hidden;
         }
 
         @keyframes fadeInUp {
@@ -132,6 +135,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .about-text {
@@ -139,6 +144,8 @@
             line-height: 1.8;
             color: #d1d1e0;
             margin-bottom: 20px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .games-grid {
@@ -181,6 +188,8 @@
         .game-name {
             font-weight: bold;
             font-size: 1.1em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .about-section {
@@ -192,6 +201,7 @@
 
         .about-content {
             flex: 1;
+            min-width: 0;
         }
 
         .discord-widget-container {
@@ -203,23 +213,6 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        @media (max-width: 768px) {
-            .about-section {
-                grid-template-columns: 1fr;
-            }
-
-            .discord-widget-container {
-                position: static;
-                display: flex;
-                justify-content: center;
-                background: none !important;
-            }
-
-            .discord-widget {
-                background: none;
-            }
         }
 
         .stats {
@@ -250,6 +243,8 @@
         .stat-label {
             color: #b8b8d1;
             margin-top: 10px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         footer {
@@ -274,6 +269,53 @@
 
             .section {
                 padding: 25px;
+            }
+
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+
+            .discord-widget-container {
+                position: static;
+                display: flex;
+                justify-content: center;
+                background: none !important;
+            }
+
+            .discord-widget {
+                background: none;
+                width: 100%;
+            }
+
+            .discord-widget iframe {
+                max-width: 100%;
+            }
+
+            .about-text {
+                font-size: 1em;
+            }
+
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .stat-card {
+                min-width: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2em;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2em;
             }
         }
     </style>
